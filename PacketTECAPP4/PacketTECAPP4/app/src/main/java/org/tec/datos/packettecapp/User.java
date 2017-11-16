@@ -2,7 +2,9 @@ package org.tec.datos.packettecapp;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-
+/**
+ * Created by Gerald on 11/13/2017.
+ */
 
 public class User {
     private String name, email;
