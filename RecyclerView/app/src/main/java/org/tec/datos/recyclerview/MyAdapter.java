@@ -15,24 +15,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private int layout;
     private OnItemClickListener itemClickListener;
 
-    public MyAdapter(List<String> names,int layout,OnItemClickListener listener){
-        this.names=names;
-        this.layout=layout;
-        this.itemClickListener=listener;
+
+    public MyAdapter(List<String> names, int layout, OnItemClickListener listener) {
+        this.names = names;
+        this.layout = layout;
+        this.itemClickListener = listener;
+
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(layout,parent,false);
+        // Inflamos el layout y se lo pasamos al constructor del ViewHolder, donde manejaremos
+        // toda la lógica como extraer los datos, referencias...
+        View v = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(names.get(position),itemClickListener);
-
-
+        // Llamamos al método Bind del ViewHolder pasándole objeto y listener
+        holder.bind(names.get(position), itemClickListener);
     }
 
     @Override
@@ -40,26 +43,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         return names.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        // Elementos UI a rellenar
         public TextView textViewName;
 
         public ViewHolder(View itemView) {
+            // Recibe la View completa. La pasa al constructor padre y enlazamos referencias UI
+            // con nuestras propiedades ViewHolder declaradas justo arriba.
             super(itemView);
             this.textViewName = (TextView) itemView.findViewById(R.id.textViewName);
         }
 
-        /**
-         *
-         * @param name Se le pasa el tipo de elemento (puede ser frutas
-         * @param listener
-         */
-        public void bind(final String name, final OnItemClickListener listener){
+        public void bind(final String name, final OnItemClickListener listener) {
+            // Procesamos los datos a renderizar
             this.textViewName.setText(name);
-            //fruta.getname()
+            // Definimos que por cada elemento de nuestro recycler view, tenemos un click listener
+            // que se comporta de la siguiente manera...
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onItemClick(name,getAdapterPosition());
+                    // ... pasamos nuestro objeto modelo (este caso String) y posición
+                    listener.onItemClick(name, getAdapterPosition());
                 }
             });
         }
