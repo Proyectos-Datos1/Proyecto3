@@ -30,4 +30,8 @@ public class Message implements Serializable{
     public User getReceiver() {
         return this.receiver;
     }
+
+    public void setReceiver(User receiver) {
+        this.receiver = receiver;
+    }
 }

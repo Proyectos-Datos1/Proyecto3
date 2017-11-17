@@ -75,7 +75,7 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <Spinner
-        android:id="@+id/contactList"
+        android:id="@+id/contactSpinner"
         android:layout_width="206dp"
         android:layout_height="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
