@@ -15,6 +15,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="                     Text here!"
+        android:textColor="@color/ColorSecondaryText"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -42,6 +43,7 @@
         android:layout_height="35dp"
         android:text="To :"
         android:textSize="25dp"
+        android:textColor="@color/ColorPrimaryText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintLeft_toLeftOf="parent"

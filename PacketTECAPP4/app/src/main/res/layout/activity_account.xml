@@ -12,7 +12,7 @@
         android:layout_height="125dp"
         android:layout_above="@+id/nameTextView"
         android:layout_centerHorizontal="true"
-        android:background="#E91E63" />
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/nameTextView"
