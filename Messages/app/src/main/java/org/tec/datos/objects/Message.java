@@ -1,5 +1,7 @@
-package org.tec.datos.messages;
+package org.tec.datos.objects;
 
+
+import org.tec.datos.objects.User;
 
 import java.io.Serializable;
 

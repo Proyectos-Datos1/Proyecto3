@@ -1,4 +1,4 @@
-package org.tec.datos.messages;
+package org.tec.datos.objects;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import org.tec.datos.datastructures.Tree.Splay.SplayBST;
+import org.tec.datos.objects.Message;
+
 public class WriteActivity extends AppCompatActivity {
 
     private EditText messageField;

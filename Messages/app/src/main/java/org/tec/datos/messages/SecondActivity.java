@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import org.tec.datos.objects.Message;
+
 public class SecondActivity extends AppCompatActivity {
 
     private Message message;
