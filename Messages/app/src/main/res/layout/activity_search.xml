@@ -31,64 +31,49 @@
         android:layout_marginLeft="16dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081"
-        app:srcCompat="@android:drawable/star_on" />
+        app:layout_constraintVertical_bias="0.089"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
 
 
     <Spinner
         android:id="@+id/optionSpinner"
         android:layout_width="206dp"
-        android:layout_height="42dp"
+        android:layout_height="40dp"
+        android:spinnerMode="dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.25" />
 
 
-    <LinearLayout
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="331dp">
-
-        <ImageButton
-            android:id="@+id/sendButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.799"
-            app:srcCompat="@android:drawable/ic_search_category_default" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Search"
-            tools:layout_editor_absoluteX="113dp"
-            tools:layout_editor_absoluteY="395dp" />
-
-    </LinearLayout>
+        android:background="@color/colorAccent"
+        android:text="Search"
+        android:textColor="@color/ColorIcons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="92dp"
         android:layout_height="39dp"
         android:text="Search by"
-        android:textSize="25dp"
         android:textAlignment="center"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
