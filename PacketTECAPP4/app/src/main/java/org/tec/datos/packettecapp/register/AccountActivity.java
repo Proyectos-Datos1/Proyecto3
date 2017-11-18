@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.support.v7.widget.Toolbar;
 import android.util.Base64;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,8 +26,10 @@ import com.facebook.login.LoginManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.tec.datos.packettecapp.Messages.SearchActivity;
+import org.tec.datos.packettecapp.Messages.WriteActivity;
 import org.tec.datos.packettecapp.R;
-import org.tec.datos.packettecapp.User;
+import org.tec.datos.packettecapp.objects.User;
 
 import com.bumptech.glide.Glide;
 
@@ -49,6 +55,9 @@ public class AccountActivity extends AppCompatActivity {
         nameTextView = (TextView) findViewById(R.id.nameTextView);
         emailTextView = (TextView) findViewById(R.id.emailTextView);
         idTextView = (TextView) findViewById(R.id.idTextView);
+
+        Toolbar myToolbar =  findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         profileTracker = new ProfileTracker() {
             @Override
@@ -151,5 +160,43 @@ public class AccountActivity extends AppCompatActivity {
         }return KeyHashes;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+
+                return true;
+
+            case R.id.action_search:
+                intent = new Intent(AccountActivity.this, SearchActivity.class);
+                Toast.makeText(AccountActivity.this,"Go to Search", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                return true;
+
+            case R.id.action_newMsg:
+                intent = new Intent(AccountActivity.this, WriteActivity.class);
+                Toast.makeText(AccountActivity.this,"Go to Search", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                return true;
+
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }
+
+

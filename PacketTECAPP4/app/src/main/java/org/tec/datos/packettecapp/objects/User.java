@@ -1,4 +1,4 @@
-package org.tec.datos.packettecapp;
+package org.tec.datos.packettecapp.objects;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

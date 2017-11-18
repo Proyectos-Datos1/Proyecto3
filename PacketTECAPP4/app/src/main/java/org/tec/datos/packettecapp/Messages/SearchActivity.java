@@ -1,4 +1,4 @@
-package org.tec.datos.messages;
+package org.tec.datos.packettecapp.Messages;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +14,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.tec.datos.packettecapp.R;
+import org.tec.datos.packettecapp.register.AccountActivity;
+
 public class SearchActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText txtField;
     private Spinner searchSpinner;
     ArrayAdapter<String> arrayAdapterContact;
-    String[] optionList= new String[]{"Attribute","Name Attached","Type Attached"};
+    String[] optionList= new String[]{"","Attribute","Name Attached","Type Attached"};
 
 
     @Override
@@ -29,7 +32,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
         searchSpinner= findViewById(R.id.optionSpinner);
         txtField = findViewById(R.id.txtField);
         searchSpinner.setOnItemSelectedListener(this);
-        arrayAdapterContact=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,optionList);
+        arrayAdapterContact=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,optionList);
         searchSpinner.setAdapter(arrayAdapterContact);
         Toolbar myToolbar =  findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -68,8 +71,8 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
                 startActivity(intent);
                 return true;
             case R.id.action_account:
-                intent = new Intent(SearchActivity.this, SearchActivity.class);
-                Toast.makeText(SearchActivity.this,"Go to Search", Toast.LENGTH_SHORT).show();
+                intent = new Intent(SearchActivity.this, AccountActivity.class);
+                Toast.makeText(SearchActivity.this,"Go to Account", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 return true;
 
