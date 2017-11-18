@@ -44,7 +44,7 @@
         <activity android:name=".ReceiveMsgActivity" />
         <activity android:name=".Messages.ListActivity" />
         <activity android:name=".Messages.SearchActivity" />
-        <activity android:name=".Messages.WriteActivity"></activity>
+        <activity android:name=".Messages.WriteActivity" />
     </application>
 
 </manifest>
