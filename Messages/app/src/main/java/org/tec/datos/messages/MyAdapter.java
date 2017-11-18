@@ -7,15 +7,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.tec.datos.datastructures.LinkedList.SimpleList.SimpleList;
+
 import java.util.List;
 
 public class MyAdapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<String> names;
+    //private List<String> names;
+    private SimpleList<String> names;
 
-    public MyAdapter(Context context, int layout, List<String> names) {
+    public MyAdapter(Context context, int layout, SimpleList<String> names) {
         this.context = context;
         this.layout = layout;
         this.names = names;
@@ -23,12 +26,12 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return this.names.size();
+        return this.names.length();
     }
 
     @Override
     public Object getItem(int position) {
-        return this.names.get(position);
+        return this.names.findItem(position);
     }
 
     @Override
@@ -56,7 +59,7 @@ public class MyAdapter extends BaseAdapter {
         }
 
         // Nos traemos el valor actual dependiente de la posición
-        String currentName = names.get(position);
+        String currentName = names.findItem(position);
         //currentName = (String) getItem(position);
 
         // Referenciamos el elemento a modificar y lo rellenamos

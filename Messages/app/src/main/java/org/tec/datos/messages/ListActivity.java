@@ -6,46 +6,39 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import org.tec.datos.datastructures.LinkedList.SimpleList.SimpleList;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
     private ListView listView;
-    private List<String> names;
+    private SimpleList<String> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        listView = (ListView) findViewById(R.id.listView);
+        listView =  findViewById(R.id.listView);
 
-        // Datos a mostrar
-        names = new ArrayList<String>();
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
-        names.add("Juan");
-        names.add("Joseph");
-        names.add("Fiorella");
-        names.add("Ricardo");
+        users = new SimpleList<>();
+        users.addLast("Juan");
+        users.addLast("Fiorella");
+        users.addLast("Mario");
+        users.addLast("Carlos");
+        users.addLast("Fernanda");
+        users.addLast("Ricardo");
+        users.addLast("Joseph");
+        users.addLast("Juan");
+        users.addLast("Fiorella");
+        users.addLast("Mario");
+        users.addLast("Carlos");
+        users.addLast("Fernanda");
+        users.addLast("Ricardo");
+        users.addLast("Joseph");
+
 
 
 
@@ -59,12 +52,12 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(ListActivity.this, "Clicked: "+names.get(position), Toast.LENGTH_LONG).show();
+                Toast.makeText(ListActivity.this, "Clicked: "+users.findItem(position), Toast.LENGTH_LONG).show();
             }
         });
 
         // Enlazamos con nuestro adaptador personalizado
-        MyAdapter myAdapter = new MyAdapter(this, R.layout.list_item, names);
+        MyAdapter myAdapter = new MyAdapter(this, R.layout.list_item, users);
         listView.setAdapter(myAdapter);
     }
 
